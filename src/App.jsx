@@ -1,4 +1,5 @@
 import "./App.css";
+import './Style.scss'
 import LeftBar from "./components/left/LeftBar";
 import RightBar from "./components/right/Right";
 import {
@@ -12,13 +13,19 @@ import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
 import Navbar from "./components/navbar/Navbar";
+import { useContext } from "react";
+import { DarkModeContext } from "./Context/darkMode";
 
 function App() {
   const currentUser = true;
 
+  const {darkMode} = useContext(DarkModeContext)
+  console.log(darkMode);
   const Layout = () => {
     return (
       <>
+      <div className={`theme-${darkMode? "dark":"light"}`} style={{display:'flex',flexDirection:"column"}}>
+<div className=""></div>
         <Navbar />
         <div style={{ display: "flex", top: "50px" }}>
           <LeftBar />
@@ -28,6 +35,7 @@ function App() {
 
           <RightBar />
         </div>
+      </div>
       </>
     );
   };

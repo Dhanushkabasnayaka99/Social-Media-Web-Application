@@ -7,7 +7,13 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { Link } from "react-router-dom";
 import "./Navbar.scss"
+import { useContext } from "react";
+import { DarkModeContext } from "../../Context/darkMode";
+
 export default function Navbar() {
+
+  const {toggle} = useContext(DarkModeContext)
+
   return (
     <div className="navbar">
       <div className="left">
@@ -15,18 +21,20 @@ export default function Navbar() {
           <span>Social Sphere</span>
         </Link>
 
-        <HomeOutlinedIcon />
-        <DarkModeOutlinedIcon />
-        <GridViewOutlinedIcon />
+        <HomeOutlinedIcon  className="icons"/>
+        
+        <DarkModeOutlinedIcon  onClick={toggle} className="icons"/>
+        
+        <GridViewOutlinedIcon className="icons" />
         <div className="search">
-          <SearchOutlinedIcon />
+          <SearchOutlinedIcon className="icons"/>
           <input type="text" placeholder="Search" />
         </div>
       </div>
        <div className="right">
-        <PersonOutlineOutlinedIcon />
-        <EmailOutlinedIcon />
-        <NotificationsNoneOutlinedIcon />
+        <PersonOutlineOutlinedIcon className="icons"/>
+        <EmailOutlinedIcon className="icons"/>
+        <NotificationsNoneOutlinedIcon className="icons"/>
         <div className="user">
           <img src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"   alt="user profile immage" />
           <span>Dhanushka</span>

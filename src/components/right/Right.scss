@@ -1,72 +1,132 @@
-.right {
-  display: flex;
-  flex: 3;
-  position: sticky;
-  top: 50px;
-  height: calc(100vh - 50px);
-  .container {
-    top: 10px;
-    width: 100%;
+@import "../../Style.scss";
 
-    gap: 10px;
+
+  .right {
+    @include themify($themes) {
     display: flex;
-    flex-direction: column;
-    padding: 10px;
-
-    .items {
+    flex: 3;
+    position: sticky;
+    top: 50px;
+    height: calc(100vh - 50px);
+    background-color: themed('bg');
+    .container {
+      top: 10px;
+      width: 100%;
+      overflow: scroll;
       gap: 10px;
       display: flex;
-      justify-content: start;
       flex-direction: column;
-      
-      -webkit-box-shadow: -1px 10px 4px 0px rgba(240, 237, 240, 0.72);
-      -moz-box-shadow: -1px 10px 4px 0px rgba(240, 237, 240, 0.72);
-      box-shadow: -1px 10px 4px 0px rgba(240, 237, 240, 0.72);
-      span {
-        font-size: 14px;
-        color: lightgray;
-        
-      }
-      .user {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 5px;
+      padding: 10px;
 
-        .userProfile {
+      .items {
+        gap: 10px;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+
+       
+
+        span {
+          font-size: 14px;
+          color: themed('textColorSoft'); /* Color based on theme */
+        }
+
+        .user {
           display: flex;
-          justify-content: center;
           align-items: center;
-          gap: 10px;
-         
-          img {
-            width: 30px;
+          justify-content: space-between;
+          padding: 5px;
+
+          .userProfile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            img {
+              width: 30px;
+              height: 30px;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+
+            span {
+              font-size: 14px;
+              color: themed('textColor'); /* Color based on theme */
+            }
+
+            p {
+              font-size: 14px;
+              color: themed('textColorSoft'); /* Color based on theme */
+            }
+          }
+
+          .buttons {
+            gap: 10px;
+            display: flex;
+            justify-content: space-around;
+
+            button {
+              padding: 5px 10px;
+              font-size: 14px;
+              color: themed('bg'); /* Text color based on theme */
+              border: none;
+              background-color: themed('textColor'); /* Background color based on theme */
+            }
+          }
+        }
+      }
+
+      .firends {
+        margin-top: 4px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+      
+
+        .user {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          gap: 15px;
+          padding: 10px;
+
+          .userProfile {
             height: 30px;
+            width: 30px;
             object-fit: cover;
-            border-radius: 50%;
+            position: relative;
+            padding: 2px;
+
+            .indicator {
+              width: 10px;
+              height: 10px;
+              position: absolute;
+              background-color: themed('bg'); /* Indicator color based on theme */
+              bottom: 0;
+              right: 0;
+              border-radius: 50%;
+            }
+
+            img {
+              height: 30px;
+              width: 30px;
+              object-fit: cover;
+              border-radius: 50%;
+            }
           }
-          span {
-            font-size: 14px;
-            color: black;
-          
-          }
+
           p {
             font-size: 14px;
-            color: gray;
-          }
-        }
-        .buttons {
-          gap: 10px;
-          display: flex;
-          justify-content: space-around;
-          button {
-            padding: 5px 10px;
-            font-size: 14px;
-            color: white;
-            border: none;
+            color: themed('textColorSoft'); /* Color based on theme */
           }
         }
       }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
     }
   }
 }

@@ -1,8 +1,8 @@
-
+import "./Home.scss";
 
 export default function Home() {
   return (
-    <div>
+    <div className="home">
     
      
      <h1>welcome</h1>
