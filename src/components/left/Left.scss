@@ -1,0 +1,38 @@
+.left {
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  flex: 2;
+ 
+  .container {
+    padding: 15px;
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          width: 30px;
+          height: 30px;
+          object-fit: cover;
+          justify-content: center;
+          border-radius: 50%;
+        }
+        span {
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+      hr {
+        height: 0.25px;
+        border: none;
+        background-color: lightgray;
+        width: 200px;
+      }
+    }
+  }
+}
