@@ -3,12 +3,12 @@
 .left {
   @include themify($themes) {
     position: sticky;
-    top: 50px;
-    height: calc(100vh - 50px);
+    top: 70px;
+    height: calc(100vh - 70px);
     flex: 2;
     padding: 5px;
   //  background: red;
-   background: themed("bg");
+   background: themed("bgSoft");
 
     .container {
       padding: 15px;

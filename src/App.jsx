@@ -1,5 +1,5 @@
 import "./App.css";
-import './Style.scss'
+import "./Style.scss";
 import LeftBar from "./components/left/LeftBar";
 import RightBar from "./components/right/Right";
 import {
@@ -15,32 +15,39 @@ import Profile from "./pages/Profile/Profile";
 import Navbar from "./components/navbar/Navbar";
 import { useContext } from "react";
 import { DarkModeContext } from "./Context/darkMode";
+import { AuthContext } from "./Context/AuthContext.jsx";
 
 function App() {
-  const currentUser = true;
+  const { currentUser, login } = useContext(AuthContext);
 
-  const {darkMode} = useContext(DarkModeContext)
-  console.log(darkMode);
+  // console.log(currentUser);
+  const { darkMode } = useContext(DarkModeContext);
+
   const Layout = () => {
     return (
       <>
-      <div className={`theme-${darkMode? "dark":"light"}`} style={{display:'flex',flexDirection:"column"}}>
-<div className=""></div>
-        <Navbar />
-        <div style={{ display: "flex", top: "50px" }}>
-          <LeftBar />
-          <div style={{ display: "flex", flex: 6 }}>
-            <Outlet />
-          </div>
+        <div
+          className={`theme-${darkMode ? "dark" : "light"}`}
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <div className=""></div>
+          <Navbar />
+          <div style={{ display: "flex", top: "50px" }}>
+            <LeftBar />
+            <div style={{ display: "flex", flex: 6 }}>
+              <Outlet />
+            </div>
 
-          <RightBar />
+            <RightBar />
+          </div>
         </div>
-      </div>
       </>
     );
   };
 
   const ProtectedRoute = ({ children }) => {
+    console.log("Current User:", currentUser); // Debugging line
+
     if (!currentUser) {
       return <Navigate to="/login" />;
     } else {
