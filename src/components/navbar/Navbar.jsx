@@ -46,7 +46,7 @@ export default function Navbar() {
         <EmailOutlinedIcon className="icons" />
         <NotificationsNoneOutlinedIcon className="icons" />
         <div className="user">
-          {/* <img src={currnetUser.profilePic}   alt="user profile immage" /> */}
+          <img src={currentUser.profilePic}   alt="user profile immage" />
           <span>{currentUser ? currentUser.name : "Guest"}</span>
         </div>
       </div>

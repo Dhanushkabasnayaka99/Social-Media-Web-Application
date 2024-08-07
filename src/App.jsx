@@ -49,8 +49,10 @@ function App() {
     console.log("Current User:", currentUser); // Debugging line
 
     if (!currentUser) {
+      console.log("inside lign")
       return <Navigate to="/login" />;
     } else {
+      console.log("inside children")
       return children;
     }
   };

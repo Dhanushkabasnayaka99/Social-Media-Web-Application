@@ -2,9 +2,10 @@
 
 .home {
   @include themify($themes) {
-    background-color: themed('bg');
+    background-color: themed("bg");
     width: 100%;
     top: 50px;
-  
+    
+    
   }
 }

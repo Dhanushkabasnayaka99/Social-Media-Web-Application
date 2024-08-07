@@ -11,6 +11,7 @@
     top: 0px;
     position: sticky;
     background-color: themed('bg');
+    z-index: 999;
 .icons{
   color: themed('textColor');
   cursor: pointer;
